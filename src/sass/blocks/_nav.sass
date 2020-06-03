@@ -1,0 +1,42 @@
+.nav
+    display: flex
+    align-items: center
+    &__menu
+        display: flex
+        margin-left: 55px
+        list-style-type: none
+        margin-bottom: 0
+    &__item
+        margin-right: 20px
+        font-size: 15px
+        color: #ffffff
+        cursor: pointer
+        position: relative
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            height: 100%
+            width: 2px
+            border-right: 1px dotted grey
+            top: 0
+            right: -10px
+        &:hover 
+            color: $main-color
+            border-bottom: 1px solid $main-color
+        &:last-child
+            margin-right: 0   
+            &::after
+                display: none
+                   
+    &__phone
+        text-align: right
+        margin-left: 50px
+        margin-right: 19px
+        font-size: 14px
+        font-weight: 300
+        color: #ffffff
+        a 
+            font-size: 19px
+            font-weight: bold
+            color: #ffffff
