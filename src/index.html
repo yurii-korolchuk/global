@@ -16,17 +16,17 @@
             <nav class="nav">
                 <a href="#" class="nav__link"><img src="img/mainlogo.png" alt="mainlogo" class="nav__logo"></a>
                 <ul class="nav__menu">
-                    <li class="nav__item"><a href="">Преимущества</a></li>
-                    <li class="nav__item"><a href="">Наша работа</a></li>
-                    <li class="nav__item"><a href="">Цены</a></li>
-                    <li class="nav__item"><a href="">Схема работы</a></li>
-                    <li class="nav__item"><a href="">Отзывы</a></li>
-                    <li class="nav__item"><a href="">Контакты</a></li>
+                    <li class="nav__item"><a href="#advantages">Преимущества</a></li>
+                    <li class="nav__item"><a href="#work">Наша работа</a></li>
+                    <li class="nav__item"><a href="#prices">Цены</a></li>
+                    <li class="nav__item"><a href="#scheme">Схема работы</a></li>
+                    <li class="nav__item"><a href="#reviews">Отзывы</a></li>
+                    <li class="nav__item"><a href="#map">Контакты</a></li>
                 </ul>
                 <div class="phone">Есть вопросы? <br> 
                     <a href="tel:+79264230100">+7 (926) 423 01 00</a>
                 </div>
-                <button class="button">Перезвоните мне</button>
+                <button class="button button_call">Перезвоните мне</button>
             </nav>
             <div class="header__text">
                 <h2 class="header__sup-header">Global Opt - логистика полного цикла из Китая в Россию</h2>
@@ -254,7 +254,9 @@
                     <input type="phone" required name="phone" placeholder="Ваш номер телефона...">
                     <input type="email" required name="mail" placeholder="Ваш e-mail...">
                 </div>
+                <hr class="prices-consultation__separator">
                 <button class="button button_consultation">Отправить заявку</button>
+                <hr class="prices-consultation__separator">
             </form>
         </div>
     </section>  
@@ -394,7 +396,7 @@
                         <a href="tel:+79264230100">+7 (926) 423 01 00</a>
                     </div>
                 </div>
-                <div class="col-md-2"><button class="button">Перезвоните мне</button></div>
+                <div class="col-md-2"><button class="button button_call">Перезвоните мне</button></div>
             </div>
             <hr class="separator separator_big">
             <div class="row">
@@ -411,6 +413,14 @@
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <span class="modal__close">&times;</span>
+                Спасибо ! Наш менеджер скоро с Вами свяжется!
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
