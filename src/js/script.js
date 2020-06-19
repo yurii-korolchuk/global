@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 	$('.slider').slick({
 		centerMode: true,

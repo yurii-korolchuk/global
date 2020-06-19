@@ -12,6 +12,10 @@
         color: $sub-color
         cursor: pointer
         position: relative
+        a 
+            color: $sub-color
+            &:hover 
+                text-decoration: none
         &::after
             content: ''
             display: block
@@ -22,8 +26,9 @@
             top: 0
             right: -10px
         &:hover 
-            color: $main-color
             border-bottom: 1px solid $main-color
+            a 
+                color: $main-color
         &:last-child
             margin-right: 0   
             &::after
