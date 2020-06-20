@@ -48,3 +48,59 @@
     .footer 
         &__delivery 
             font-size: 14px
+@media( max-width: 992px)
+    .nav
+        display: flex
+        justify-content: space-between
+        &__menu 
+            display: none
+    .header 
+        top: 30px
+        &__sup-header
+            font-size: 23px
+        &__header 
+            font-size: 50px
+            margin-top: 10px
+    .hamburger
+        display: block
+        .nav 
+            &__menu
+                display: flex
+    .prices
+        form 
+            input 
+                width: 220px
+        &__icon
+            &::before, &::after 
+                width: 300px
+        &-consultation 
+            &__separator
+                width: 258px
+    .scheme 
+        &__wrapper 
+            .info 
+                &:first-of-type
+                    margin-left: 25px
+    .questions 
+        &__wrapper 
+            width: 90%
+        &__form
+            input 
+                &:nth-of-type(3)
+                    display: block
+                    margin: 0 auto
+                    margin-top: 10px
+                &:last-of-type
+                    width: 90%
+    .footer 
+        &__delivery
+            font-size: 18px
+            line-height: 21px
+            margin-left: 15px
+            margin-top: 15px
+    .phone 
+        &_footer
+            margin-top: 15px
+    .button
+        &_footer
+            margin-top: 15px
