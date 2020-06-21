@@ -3,7 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		centerMode: true,
   		slidesToShow: 3,
 		prevArrow: $('.reviews-prev'),
-		nextArrow: $('.reviews-next')
+		nextArrow: $('.reviews-next'),
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
 	});
 	document.querySelectorAll('.reviews button').forEach(item => {
 		item.addEventListener('click', (e) => {
@@ -20,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		e.preventDefault();
 		
 		const blockID = anchor.getAttribute('href').substr(1);
-		
 		document.getElementById(blockID).scrollIntoView({
 		behavior: 'smooth',
 		block: 'start'
@@ -64,5 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			item.reset();
 		});
+	});
+	document.querySelector('.hamburger__wrapper').addEventListener('click', (e) => {
+		if(e.target.parentNode.classList.contains('hamburger__wrapper_close')) {
+			e.target.parentNode.classList.remove('hamburger__wrapper_close');
+			document.querySelector('.nav').classList.remove('nav_active');
+			document.body.style.overflow = 'auto';
+		} else {
+			e.target.parentNode.classList.add('hamburger__wrapper_close');
+			document.querySelector('.nav').classList.add('nav_active');
+			document.body.style.overflow = 'hidden';
+		}
 	});
 }});

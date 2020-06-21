@@ -104,3 +104,89 @@
     .button
         &_footer
             margin-top: 15px
+@media( max-width: 768px)
+    .hamburger
+        .nav
+            position: absolute
+            height: 100vh
+            width: 70%
+            background-color: rgba(0, 0, 0, 0.9)
+            top: 0
+            z-index: -1
+            transform: translateX(-100%)
+            transition: 0.3s all
+            &__menu
+                display: flex
+                flex-direction: column
+            &__item 
+                display: block
+                margin-top: 20px
+                font-size: 35px
+                &:hover
+                    border: none
+                &::after
+                    display: none
+            &_active
+                transform: translateX(0%)
+                transition: 0.5s all
+    .header 
+        min-height: 730px
+        &__sup-header
+            font-size: 18px
+        &__header 
+            font-size: 37px
+        &__sub-header 
+            font-size: 21px
+    .advantages 
+        .info 
+            &:nth-of-type(2)
+                margin-top: 35px
+    .header-text
+        font-size: 22px
+    .subheader 
+        font-size: 18px
+    .work 
+        .info_work 
+            margin-bottom: 25px
+            img 
+                width: 80%
+        .info__text_work 
+            font-size: 17px
+    .prices
+        form 
+            input 
+                margin: 0
+                width: 75%
+                margin-top: 15px
+        &__consultation 
+            margin: 60px 0 20px 0
+        &__icon
+            &::before, &::after 
+                width: 210px
+        &-consultation
+            &__separator 
+                width: 165px
+            &__wrapper 
+                display: flex
+                flex-direction: column
+                input 
+                    position: relative
+                    left: 50%
+                    transform: translateX(-50%)
+                &::before, &::after 
+                    bottom: 49.5%
+                    height: 283px
+    .questions 
+        &__form 
+            input 
+                display: block
+                margin: 0 auto
+                width: 90%
+                &:first-of-type
+                    margin: 0 auto
+                    margin-bottom: 10px
+    .footer 
+        &__delivery 
+            margin-left: 42px
+            font-size: 17px
+

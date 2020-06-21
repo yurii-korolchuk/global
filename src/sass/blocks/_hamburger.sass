@@ -12,9 +12,28 @@
                 &:hover
                     text-decoration: underline
                     color: $sub-color
-                
         &__menu
             position: relative
             margin: 0
             left: 50%
             transform: translateX(-50%)
+    &__wrapper 
+        z-index: 6
+        display: inline-block
+        &_close 
+            span 
+                &:first-of-type
+                    transform: rotate(45deg) translate(10px, 3px)
+                    transition: 0.3s all
+                &:nth-of-type(2)
+                    display: none
+                &:last-of-type
+                    transform: rotate(-45deg) translate(2px, 4px)
+                    transition: 0.3s all
+    &__item
+        position: relative 
+        display: block
+        width: 30px
+        height: 4px
+        background-color: $sub-color
+        margin: 4px 0px 0px 4px

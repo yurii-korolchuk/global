@@ -12,10 +12,12 @@
 </head>
 <body>
     <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-        <nav class="nav">
+        <div class="hamburger__wrapper">
+            <span class="hamburger__item"></span>
+            <span class="hamburger__item"></span>
+            <span class="hamburger__item"></span>
+        </div>
+        <nav class="nav ">
             <ul class="nav__menu">
                 <li class="nav__item"><a href="#header">На главную</a></li>
                 <li class="nav__item"><a href="#advantages">Преимущества</a></li>
@@ -55,19 +57,19 @@
                 <hr>
             </div>
             <div class="row">
-                <div class="col-12 col-md-3 info info_vertical">
+                <div class="col-12 col-sm-6 col-md-3 info info_vertical">
                     <img src="icons/header_shipping.png" alt="shipping" class="info__img">
                     <div class="info__text info__text_1">Перевозка негабаритных и крупнотоннажных грузов</div>
                 </div>
-                <div class="col-12 col-md-3 info info_vertical">
+                <div class="col-12 col-sm-6 col-md-3 info info_vertical">
                     <img src="icons/header_optimization.png" alt="optimization" class="info__img">
                     <div class="info__text info__text_2">Самостоятельно декларируем и проводим таможенную очистку с оптимизацией кодов и ставок</div>
                 </div>
-                <div class="col-12 col-md-3 info info_vertical">
+                <div class="col-12 col-sm-6 col-md-3 info info_vertical">
                     <img src="icons/header_forward_delivery.png" alt="forward_delivery" class="info__img">
                     <div class="info__text info__text_3">Осуществляем прямые поставки с заводов от двери до двери</div>
                 </div>
-                <div class="col-12 col-md-3 info info_vertical">
+                <div class="col-12 col-sm-6 col-md-3 info info_vertical">
                     <img src="icons/header_express_delivery.png" alt="" class="info__img">
                     <div class="info__text info__text_4">Экспресс доставка 1-2 дня из Гуанчжоу в Москву от 25$/кг  </div>
                 </div>
@@ -197,7 +199,7 @@
                 Любой груз доставим вовремя. 
             </h2>
             <div class="row">
-                <div class="col-12 col-xl-3 col-md-6">
+                <div class="col-12 col-sm-6 col-xl-3 col-md-6">
                     <div class="prices__wrapper">
                         <div class="prices__header">Доставка морем</div> 
                         <div class="info info_vertical">
@@ -212,7 +214,7 @@
                         <button class="button button_price">Подробнее</button>
                     </div>
                 </div>
-                <div class="col-12 col-xl-3 col-md-6">
+                <div class="col-12 col-sm-6 col-xl-3 col-md-6">
                     <div class="prices__wrapper">
                         <div class="prices__header">Ж/Д доставка</div>  
                         <div class="info info_vertical">
@@ -227,7 +229,7 @@
                         <button class="button button_price">Подробнее</button>
                     </div>
                 </div>
-                <div class="col-12 col-xl-3 col-md-6">
+                <div class="col-12 col-sm-6 col-xl-3 col-md-6">
                     <div class="prices__wrapper">
                         <div class="prices__header">Автодоставка</div>
                         <div class="info info_vertical">
@@ -244,7 +246,7 @@
                         <button class="button button_price">Подробнее</button>
                     </div>
                 </div>
-                <div class="col-12 col-xl-3 col-md-6">
+                <div class="col-12 col-sm-6 col-xl-3 col-md-6">
                     <div class="prices__wrapper">
                         <div class="prices__header">Авиа доставка</div>
                         <div class="info info_vertical">
@@ -293,7 +295,7 @@
         <div class="container">
             <h2 class="header-text header-text_mb29">Схема работы с нами</h2>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
                     <div class="info info_vertical">
                         <img src="icons/scheme_form.png" alt="form" class="info__img">
                         <div class="info__text info__text_black info__text_scheme"><span>Заявка</span>
@@ -301,7 +303,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
                     <div class="info info_vertical">
                         <img src="icons/scheme_analytics.png" alt="analytics" class="info__img">
                         <div class="info__text info__text_black info__text_scheme"><span>Аналитика доставки</span>
@@ -309,7 +311,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
                     <div class="info info_vertical">
                         <img src="icons/scheme_contract.png" alt="contract" class="info__img">
                         <div class="info__text info__text_black info__text_scheme"><span>Договор</span>
@@ -317,7 +319,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
                     <div class="info info_vertical">
                         <img src="icons/scheme_delivery.png" alt="delivery" class="info__img">
                         <div class="info__text info__text_black info__text_scheme"><span>Доставка на наш склад</span>
@@ -405,24 +407,24 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-1"><a href="#" class="footer__logo"><img src="img/logo_mini.png" alt="mini logo"></a></div>
-                <div class="col-md-5"><div class="footer__delivery">Global Opt - Доставка грузов из Китая в Россию и СНГ</div></div>
-                <div class="col-lg-2 offset-lg-2 col-md-3">
+                <div class="col-1 col-md-1"><a href="#" class="footer__logo"><img src="img/logo_mini.png" alt="mini logo"></a></div>
+                <div class="col-11 col-md-5"><div class="footer__delivery">Global Opt - Доставка грузов из Китая в Россию и СНГ</div></div>
+                <div class="col-4 offset-4 col-lg-2 offset-lg-2 col-md-3">
                     <div class="phone phone_footer">Есть вопросы? <br> 
                         <a href="tel:+79264230100">+7 (926) 423 01 00</a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2"><div class="col-md-2"><button class="button button_call button_footer">Перезвоните мне</button></div></div>
+                <div class="col-4 col-lg-2 col-md-2"><div class="col-md-2"><button class="button button_call button_footer">Перезвоните мне</button></div></div>
             </div>
             <hr class="separator separator_big">
             <div class="row">
-                <div class="col-lg-2 col-md-3">
+                <div class="col-4 col-lg-2 col-md-3">
                     <div class="footer__copyright">© 2010 Scratch.com.ua</div>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-md-4">
+                <div class="col-4 col-lg-3 offset-lg-1 col-md-4">
                     <a href="#" class="footer__politics">Политика конфидециальности</a>
                 </div>
-                <div class="col-lg-3 offset-md-2 col-md-3 ">
+                <div class="col-4 col-lg-3 offset-md-2 col-md-3 ">
                     <div class="footer__creation"><span>Создание сайта:</span><a href="#"><img src="icons/creation_logo.png" alt=""></a></div>
                 </div>
             </div>
