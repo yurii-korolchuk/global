@@ -1,4 +1,4 @@
-@media( max-width: 1200px )
+@media( max-width: 1199px )
     .phone
         margin-left: 27px
         &_footer
@@ -48,7 +48,7 @@
     .footer 
         &__delivery 
             font-size: 14px
-@media( max-width: 992px)
+@media( max-width: 991px)
     .nav
         display: flex
         justify-content: space-around
@@ -117,7 +117,7 @@
     .button
         &_footer
             margin-top: 15px
-@media( max-width: 768px)
+@media( max-width: 767px)
     .hamburger
         &__wrapper 
             display: block
@@ -128,7 +128,7 @@
             background-color: rgba(0, 0, 0, 0.9)
             top: 0
             z-index: -1
-            transform: translateX(-100%)
+            transform: translateX(-110%)
             transition: 0.3s all
             &__menu
                 display: flex
@@ -166,6 +166,8 @@
             margin-bottom: 25px
             img 
                 width: 80%
+            &:nth-of-type(2)
+                margin-top: 35px
         .info__text_work 
             font-size: 17px
     .prices
@@ -205,6 +207,93 @@
         &__delivery 
             margin-left: 42px
             font-size: 17px
-
+@media(max-width: 575px)
+    .hamburger 
+        .nav 
+            &__item 
+                font-size: 25px
+    .header 
+        min-height: 980px
+        .phone 
+            display: none
+        &__sup-header 
+            font-size: 13px
+        &__header 
+            font-size: 21px
+            line-height: 20px
+        &__sub-header 
+            font-size: 12px
+        &__separator 
+            hr 
+                width: 135px
+    .header-text 
+        font-size: 20px
+    .subheader 
+        font-size: 14px
+    .advantages 
+        .info 
+            &__text 
+                &_black 
+                    font-size: 12px
+    .agent 
+        &__text
+            padding: 0px 15px 0px 15px
+            font-size: 14px
+    .prices 
+        &__consultation 
+            padding: 0px 10px 0px 10px
+            font-size: 23px
+        &__icon 
+            &::before, &::after 
+                display: none
+        &-consultation 
+            &__wrapper 
+                &::before, &::after 
+                    display: none
+            &__separator 
+                display: none
+    .scheme 
+        &__wrapper 
+            flex-wrap: wrap
+            margin-top: 0
+            .info 
+                &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3)
+                    width: 75%
+                    margin-left: 12.7%
+    .work 
+        .info 
+            &__text 
+                &_work 
+                    font-size: 14px
+                    text-align: center 
+    .managers 
+        &__header 
+            font-size: 20px
+        &__text 
+            font-size: 14px
+    .questions 
+        &__form 
+            input 
+                &:nth-of-type(2)
+                    margin: 0 0 0 5%
+    .footer 
+        &__delivery 
+            font-size: 14px 
+            margin-left: 47px
+        &__creation 
+            display: none
+        &__copyright 
+            line-height: 26px
+    .button 
+        width: 135px
+        font-size: 10px
+        &_big 
+            width: 160px
+            font-size: 14px
+    .row 
+        margin-right: 0
+        margin-left: 0
+                    
+                    
 
 
