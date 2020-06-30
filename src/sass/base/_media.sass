@@ -70,11 +70,17 @@
                 justify-content: space-around
                 position: relative
             &__item 
+                text-transform: uppercase
+                text-align: center
+                line-height: 28px
                 font-size: 16px
-                &::after 
-                    border-right: 1px solid $sub-color
-                    right: -24px
-                    height: 126%
+                margin: 0
+                &::after
+                    display: none
+                &:hover 
+                    cursor: auto
+                    a
+                        color: $sub-color
         &__wrapper 
             display: none
     .prices
