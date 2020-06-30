@@ -1,6 +1,15 @@
 .slider
     position: relative
+    overflow: hidden
+    &__inner 
+        display: flex
+        justify-content: center
+        transition: 0.5s all
+    &__wrapper 
+        display: flex
+        justify-content: center
     &__item
+        width: 50%
         img 
             display: block
             margin: 0 auto 
@@ -14,14 +23,7 @@
             text-align: center
             font-size: 18px
             font-weight: bold
-.slick-slide
-    transform: scale(0.4)
-    opacity: 0.3
-    transition: 0.5s all
-.slick-center
-    transform: scale(1)
-    opacity: 1
-    transition: 0.5s all
+        
 
 
  

@@ -230,14 +230,30 @@ const modalClose = function(modalWindowSelector) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 function slider() {
-    document.querySelectorAll('.reviews button').forEach(item => {
-		item.addEventListener('click', (e) => {
-			e.target.classList.add('active');
-			setTimeout(() => {
-				e.target.classList.remove('active');
-			}, 300);
-		});
+	const sliderInner = document.querySelector('.slider__inner');
+	const sliderItems = document.querySelectorAll('.slider__item');
+	const width = Math.floor(+window.getComputedStyle(document.querySelector('.slider')).width.slice(0, -2));
+	sliderInner.style.width = Math.floor(width * sliderItems.length) + 'px';
+	let offset = 0;
+
+	document.querySelector('.slider__arrow-next').addEventListener('click', (e) => {
+		if(offset == width * (sliderItems.length - 1)) {
+			offset = 0;
+		} else {
+			offset = Math.floor(offset + width);
+		}	
+		sliderInner.style.transform = `translateX(-${offset}px)`;
 	});
+
+	document.querySelector('.slider__arrow-prev').addEventListener('click', (e) => {
+		if(offset == 0) {
+			offset = width * (sliderItems.length - 1);
+		} else {
+			offset = Math.floor(offset - width);
+		}
+		sliderInner.style.transform = `translateX(-${offset}px)`;
+	});
+
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (slider);
@@ -263,28 +279,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	$('.slider').slick({
-		centerMode: true,
-  		slidesToShow: 3,
-		prevArrow: $('.reviews-prev'),
-		nextArrow: $('.reviews-next'),
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1
-				}
-			}
-		]
-	});
-
 	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsNav"])('.nav__item a');
 	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsButton"])('.button_call', '.prices__consultation');
 	Object(_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])('form', '.modal');
 	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["default"])();
 	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])();
 
-});
+});	
 
 /***/ })
 

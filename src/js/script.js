@@ -4,25 +4,10 @@ import hamburger from './modules/hamburger';
 import slider from './modules/slider';
 
 document.addEventListener('DOMContentLoaded', () => {
-	$('.slider').slick({
-		centerMode: true,
-  		slidesToShow: 3,
-		prevArrow: $('.reviews-prev'),
-		nextArrow: $('.reviews-next'),
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1
-				}
-			}
-		]
-	});
-
 	anchorsNav('.nav__item a');
 	anchorsButton('.button_call', '.prices__consultation');
 	form('form', '.modal');
 	hamburger();
 	slider();
 
-});
+});	
