@@ -1,5 +1,5 @@
-function anchorsNav() {
-    document.querySelectorAll('.nav__item a').forEach(item => {
+function anchorsNav(navSelector) {
+    document.querySelectorAll(navSelector).forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
 
@@ -12,10 +12,10 @@ function anchorsNav() {
     });
 }
 
-function anchorsButton() {
-    document.querySelectorAll('.button_call').forEach(item => {
+function anchorsButton(buttonSelector, scrollToSelector) {
+    document.querySelectorAll(buttonSelector).forEach(item => {
 		item.addEventListener('click', () => {
-			document.querySelector('.prices__consultation').scrollIntoView({
+			document.querySelector(scrollToSelector).scrollIntoView({
 				behavior: 'smooth',
 				block: 'center'
 			});

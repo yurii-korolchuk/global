@@ -97,8 +97,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anchorsNav", function() { return anchorsNav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anchorsButton", function() { return anchorsButton; });
-function anchorsNav() {
-    document.querySelectorAll('.nav__item a').forEach(item => {
+function anchorsNav(navSelector) {
+    document.querySelectorAll(navSelector).forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
 
@@ -111,10 +111,10 @@ function anchorsNav() {
     });
 }
 
-function anchorsButton() {
-    document.querySelectorAll('.button_call').forEach(item => {
+function anchorsButton(buttonSelector, scrollToSelector) {
+    document.querySelectorAll(buttonSelector).forEach(item => {
 		item.addEventListener('click', () => {
-			document.querySelector('.prices__consultation').scrollIntoView({
+			document.querySelector(scrollToSelector).scrollIntoView({
 				behavior: 'smooth',
 				block: 'center'
 			});
@@ -135,30 +135,27 @@ function anchorsButton() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function form() {
-    const modalClose = function() {
-		document.querySelector('.modal').style.display = "none";
-		document.body.style.overflow = 'auto';
-	};
-	
-	document.querySelectorAll('form').forEach(item => {
+/* harmony import */ var _modal_toggle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal_toggle */ "./src/js/modules/modal_toggle.js");
+
+
+function form(formSelector, modalWindowSelector) {	
+	document.querySelectorAll(formSelector).forEach(item => {
 		item.addEventListener('submit', (e) => {
 			e.preventDefault();
 
-			document.querySelector('.modal').style.display = "block";
-			document.body.style.overflow = 'hidden';
+			Object(_modal_toggle__WEBPACK_IMPORTED_MODULE_0__["modalOpen"])(modalWindowSelector);
 
 			document.querySelector('.modal__close').addEventListener('click', () => {
-				modalClose();
+				Object(_modal_toggle__WEBPACK_IMPORTED_MODULE_0__["modalClose"])(modalWindowSelector);
 			});
 
 			const close = setTimeout(() => {
-				modalClose();
+				Object(_modal_toggle__WEBPACK_IMPORTED_MODULE_0__["modalClose"])(modalWindowSelector);
 			}, 3500);
 
 			document.addEventListener('keydown', (e) => {
 				if(e.code === 'Escape' &&  document.querySelector('.modal').style.display == 'block') {
-					modalClose();
+					Object(_modal_toggle__WEBPACK_IMPORTED_MODULE_0__["modalClose"])(modalWindowSelector);
 				}
 			});
 
@@ -195,6 +192,31 @@ function hamburger() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (hamburger);
+
+/***/ }),
+
+/***/ "./src/js/modules/modal_toggle.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/modal_toggle.js ***!
+  \****************************************/
+/*! exports provided: modalOpen, modalClose */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalOpen", function() { return modalOpen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalClose", function() { return modalClose; });
+function modalOpen(modalWindowSelector) {
+    document.querySelector(modalWindowSelector).style.display = "block";
+    document.body.style.overflow = 'hidden';
+}
+
+const modalClose = function(modalWindowSelector) {
+    document.querySelector(modalWindowSelector).style.display = "none";
+    document.body.style.overflow = 'auto';
+};
+
+
 
 /***/ }),
 
@@ -256,9 +278,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		]
 	});
 
-	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsNav"])();
-	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsButton"])();
-	Object(_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])();
+	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsNav"])('.nav__item a');
+	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsButton"])('.button_call', '.prices__consultation');
+	Object(_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])('form', '.modal');
 	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["default"])();
 	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])();
 

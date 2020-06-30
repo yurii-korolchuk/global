@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		]
 	});
 
-	anchorsNav();
-	anchorsButton();
-	form();
+	anchorsNav('.nav__item a');
+	anchorsButton('.button_call', '.prices__consultation');
+	form('form', '.modal');
 	hamburger();
 	slider();
 
