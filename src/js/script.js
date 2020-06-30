@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	anchorsButton('.button_call', '.prices__consultation');
 	form('form', '.modal');
 	hamburger();
-	slider();
+	slider('.slider__item', '.slider__inner', '.slider', '.slider__arrow-next', '.slider__arrow-prev');
 
 });	
