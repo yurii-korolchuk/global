@@ -30,7 +30,18 @@
                 &:last-of-type
                     transform: rotate(-45deg) translate(2px, 4px)
                     transition: 0.3s all
+        &_open 
+            span 
+                &:first-of-type
+                    transform: rotate(0deg)
+                    transition: 0.3s all
+                &:nth-of-type(2)
+                    display: block
+                &:last-of-type
+                    transform: rotate(0deg) 
+                    transition: 0.3s all
     &__item
+        z-index: -1
         position: relative 
         display: block
         width: 30px
