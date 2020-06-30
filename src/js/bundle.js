@@ -86,50 +86,33 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/script.js":
-/*!**************************!*\
-  !*** ./src/js/script.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/js/modules/acnhors_scroll.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/acnhors_scroll.js ***!
+  \******************************************/
+/*! exports provided: anchorsNav, anchorsButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-document.addEventListener('DOMContentLoaded', () => {
-	$('.slider').slick({
-		centerMode: true,
-  		slidesToShow: 3,
-		prevArrow: $('.reviews-prev'),
-		nextArrow: $('.reviews-next'),
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1
-				}
-			}
-		]
-	});
-	document.querySelectorAll('.reviews button').forEach(item => {
-		item.addEventListener('click', (e) => {
-			e.target.classList.add('active');
-			setTimeout(() => {
-				e.target.classList.remove('active');
-			}, 300);
-		});
-	});
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anchorsNav", function() { return anchorsNav; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anchorsButton", function() { return anchorsButton; });
+function anchorsNav() {
+    document.querySelectorAll('.nav__item a').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
 
-	const anchors = document.querySelectorAll('.nav__item a');
-	for (let anchor of anchors) {
-	anchor.addEventListener('click', function (e) {
-		e.preventDefault();
-		
-		const blockID = anchor.getAttribute('href').substr(1);
-		document.getElementById(blockID).scrollIntoView({
-		behavior: 'smooth',
-		block: 'start'
-		});
-	});
+            const blockID = item.getAttribute('href').substr(1);
+            document.getElementById(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+    });
+}
 
-	document.querySelectorAll('.button_call').forEach(item => {
+function anchorsButton() {
+    document.querySelectorAll('.button_call').forEach(item => {
 		item.addEventListener('click', () => {
 			document.querySelector('.prices__consultation').scrollIntoView({
 				behavior: 'smooth',
@@ -137,8 +120,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	});
+}
 
-	const modalClose = function() {
+
+
+/***/ }),
+
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function form() {
+    const modalClose = function() {
 		document.querySelector('.modal').style.display = "none";
 		document.body.style.overflow = 'auto';
 	};
@@ -167,7 +165,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.reset();
 		});
 	});
-	document.querySelector('.hamburger__wrapper').addEventListener('click', (e) => {
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (form);
+
+/***/ }),
+
+/***/ "./src/js/modules/hamburger.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/hamburger.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function hamburger() {
+    document.querySelector('.hamburger__wrapper').addEventListener('click', (e) => {
 		if(e.target.parentNode.classList.contains('hamburger__wrapper_close')) {
 			e.target.parentNode.classList.remove('hamburger__wrapper_close');
 			document.querySelector('.nav').classList.remove('nav_active');
@@ -178,7 +192,77 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.body.style.overflow = 'hidden';
 		}
 	});
-}});
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (hamburger);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function slider() {
+    document.querySelectorAll('.reviews button').forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.target.classList.add('active');
+			setTimeout(() => {
+				e.target.classList.remove('active');
+			}, 300);
+		});
+	});
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (slider);
+
+/***/ }),
+
+/***/ "./src/js/script.js":
+/*!**************************!*\
+  !*** ./src/js/script.js ***!
+  \**************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/acnhors_scroll */ "./src/js/modules/acnhors_scroll.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	$('.slider').slick({
+		centerMode: true,
+  		slidesToShow: 3,
+		prevArrow: $('.reviews-prev'),
+		nextArrow: $('.reviews-next'),
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+
+	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsNav"])();
+	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsButton"])();
+	Object(_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])();
+	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["default"])();
+	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])();
+
+});
 
 /***/ })
 
