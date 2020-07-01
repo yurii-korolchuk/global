@@ -97,6 +97,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anchorsNav", function() { return anchorsNav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anchorsButton", function() { return anchorsButton; });
+/* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./src/js/modules/hamburger.js");
+
+
 function anchorsNav(navSelector) {
     document.querySelectorAll(navSelector).forEach(item => {
         item.addEventListener('click', function(e) {
@@ -108,9 +111,7 @@ function anchorsNav(navSelector) {
             });
             try {
                 if(document.querySelector('.nav').classList.contains('nav_active')) {
-                    document.querySelector('.nav').classList.remove('nav_active');
-                    document.querySelector('.hamburger__wrapper').classList.remove('hamburger__wrapper_close');
-                    document.querySelector('.hamburger__wrapper').classList.add('hamburger__wrapper_open');
+                    Object(_hamburger__WEBPACK_IMPORTED_MODULE_0__["closeNavMenu"])('.nav', 'nav_active');
                 }
             } catch(e) {}
         });
@@ -178,11 +179,13 @@ function form(formSelector, modalWindowSelector) {
 /*!*************************************!*\
   !*** ./src/js/modules/hamburger.js ***!
   \*************************************/
-/*! exports provided: default */
+/*! exports provided: hamburger, closeNavMenu */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hamburger", function() { return hamburger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeNavMenu", function() { return closeNavMenu; });
 function openNavMenu(navMenuSelector, navMenuActiveClassSelector) {
 	document.querySelector(navMenuSelector).classList.add(navMenuActiveClassSelector);
 	document.body.style.overflow = 'hidden';
@@ -211,7 +214,7 @@ function hamburger() {
 	});
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (hamburger);
+
 
 /***/ }),
 
@@ -310,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsNav"])('.nav__item a');
 	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsButton"])('.button_call', '.prices__consultation');
 	Object(_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])('form', '.modal');
-	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["default"])();
+	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["hamburger"])();
 	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])('.slider__item', '.slider__inner', '.slider', '.slider__arrow-next', '.slider__arrow-prev');
 
 });	

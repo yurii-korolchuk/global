@@ -26,4 +26,4 @@ function hamburger() {
 	});
 }
 
-export default hamburger;
+export {hamburger, closeNavMenu};
