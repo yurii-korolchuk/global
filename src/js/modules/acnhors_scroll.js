@@ -11,7 +11,7 @@ function anchorsNav(navSelector) {
             });
             try {
                 if(document.querySelector('.nav').classList.contains('nav_active')) {
-                    closeNavMenu('.nav', 'nav_active');
+                    closeNavMenu('.nav', 'nav_active', '.hamburger__wrapper', 'hamburger__wrapper_open', 'hamburger__wrapper_close');
                 }
             } catch(e) {}
         });

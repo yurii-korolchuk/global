@@ -1,24 +1,24 @@
-function openNavMenu(navMenuSelector, navMenuActiveClassSelector) {
+function openNavMenu(navMenuSelector, navMenuActiveClassSelector, hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass) {
 	document.querySelector(navMenuSelector).classList.add(navMenuActiveClassSelector);
 	document.body.style.overflow = 'hidden';
+	document.querySelector(hamburgerSelector).classList.remove(hamburgerOpenedClass);
+	document.querySelector(hamburgerSelector).classList.add(hamburgerClosedClass);
 }
 
-function closeNavMenu(navMenuSelector, navMenuActiveClassSelector) {
+function closeNavMenu(navMenuSelector, navMenuActiveClassSelector, hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass) {
 	document.querySelector(navMenuSelector).classList.remove(navMenuActiveClassSelector);
 	document.body.style.overflow = 'auto';
+	document.querySelector(hamburgerSelector).classList.remove(hamburgerClosedClass);
+	document.querySelector(hamburgerSelector).classList.add(hamburgerOpenedClass);
 }
 
-function hamburger(hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass) {
+function hamburger(navMenuSelector, navMenuActiveClassSelector, hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass) {
     document.querySelector(hamburgerSelector).addEventListener('click', (e) => {
 		if(e.target && e.target.classList.contains('hamburger__wrapper')) {
 			if(e.target.classList.contains(hamburgerOpenedClass)) {
-				e.target.classList.remove(hamburgerOpenedClass);
-				e.target.classList.add(hamburgerClosedClass);
-				openNavMenu('.nav', 'nav_active');
+				openNavMenu(navMenuSelector, navMenuActiveClassSelector, hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass);
 			} else if(e.target.classList.contains(hamburgerClosedClass)) {
-				e.target.classList.remove(hamburgerClosedClass);
-				e.target.classList.add(hamburgerOpenedClass);
-				closeNavMenu('.nav', 'nav_active');
+				closeNavMenu(navMenuSelector, navMenuActiveClassSelector, hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass);
 			}
 		}
 	});
