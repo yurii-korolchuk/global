@@ -17,6 +17,9 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "> 1%"
+  ],
   "bugs": {
     "url": "https://github.com/yurii-korolchuk/global/issues"
   },
