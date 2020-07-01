@@ -196,18 +196,16 @@ function closeNavMenu(navMenuSelector, navMenuActiveClassSelector) {
 	document.body.style.overflow = 'auto';
 }
 
-function hamburger() {
-    document.querySelector('.hamburger').addEventListener('click', (e) => {
+function hamburger(hamburgerSelector, hamburgerOpenedClass, hamburgerClosedClass) {
+    document.querySelector(hamburgerSelector).addEventListener('click', (e) => {
 		if(e.target && e.target.classList.contains('hamburger__wrapper')) {
-			if(e.target.classList.contains('hamburger__wrapper_open')) {
-				e.target.classList.remove('hamburger__wrapper_open');
-				e.target.classList.add('hamburger__wrapper_close');
+			if(e.target.classList.contains(hamburgerOpenedClass)) {
+				e.target.classList.remove(hamburgerOpenedClass);
+				e.target.classList.add(hamburgerClosedClass);
 				openNavMenu('.nav', 'nav_active');
-				
-	
-			} else if(e.target.classList.contains('hamburger__wrapper_close')) {
-				e.target.classList.remove('hamburger__wrapper_close');
-				e.target.classList.add('hamburger__wrapper_open');
+			} else if(e.target.classList.contains(hamburgerClosedClass)) {
+				e.target.classList.remove(hamburgerClosedClass);
+				e.target.classList.add(hamburgerOpenedClass);
 				closeNavMenu('.nav', 'nav_active');
 			}
 		}
@@ -313,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsNav"])('.nav__item a');
 	Object(_modules_acnhors_scroll__WEBPACK_IMPORTED_MODULE_0__["anchorsButton"])('.button_call', '.prices__consultation');
 	Object(_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])('form', '.modal');
-	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["hamburger"])();
+	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["hamburger"])('.hamburger', 'hamburger__wrapper_open', 'hamburger__wrapper_close');
 	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])('.slider__item', '.slider__inner', '.slider', '.slider__arrow-next', '.slider__arrow-prev');
 
 });	

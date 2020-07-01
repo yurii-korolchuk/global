@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	anchorsNav('.nav__item a');
 	anchorsButton('.button_call', '.prices__consultation');
 	form('form', '.modal');
-	hamburger();
+	hamburger('.hamburger', 'hamburger__wrapper_open', 'hamburger__wrapper_close');
 	slider('.slider__item', '.slider__inner', '.slider', '.slider__arrow-next', '.slider__arrow-prev');
 
 });	
