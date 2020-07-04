@@ -175,6 +175,36 @@ function form(formSelector, modalWindowSelector) {
 
 /***/ }),
 
+/***/ "./src/js/modules/get_form_info.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/get_form_info.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function getFormInfo(inputsSelector, formName) {
+    document.querySelectorAll(inputsSelector).forEach(item => {
+        if(formName) {
+            const tmp = localStorage.getItem(`${formName}${item.getAttribute('name').charAt(0).toUpperCase() + 
+            item.getAttribute('name').slice(1)}`);
+            if(tmp) {
+                item.value = tmp;
+            }
+        } else {
+            const tmp = localStorage.getItem(`${item.getAttribute('name').charAt(0).toUpperCase() + item.getAttribute('name').slice(1)}`);
+            if(tmp) {
+                item.value = tmp;
+            }
+        }
+    });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (getFormInfo);
+
+/***/ }),
+
 /***/ "./src/js/modules/hamburger.js":
 /*!*************************************!*\
   !*** ./src/js/modules/hamburger.js ***!
@@ -332,6 +362,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_save_form_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/save_form_info */ "./src/js/modules/save_form_info.js");
+/* harmony import */ var _modules_get_form_info__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/get_form_info */ "./src/js/modules/get_form_info.js");
+
 
 
 
@@ -345,6 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_2__["hamburger"])('.nav', 'nav_active', '.hamburger__wrapper', 'hamburger__wrapper_open', 'hamburger__wrapper_close');
 	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])('.slider__item', '.slider__inner', '.slider', '.slider__arrow-next', '.slider__arrow-prev');
 	Object(_modules_save_form_info__WEBPACK_IMPORTED_MODULE_4__["default"])('.questions__form input', 'questions');
+	Object(_modules_get_form_info__WEBPACK_IMPORTED_MODULE_5__["default"])('.questions__form input', 'questions');
 
 });	
 
